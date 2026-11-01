@@ -1,4 +1,4 @@
-# amazin — decisions and evidence
+# StealthEmotes / Amazin — decisions and evidence
 
 **Project author and creative direction:** Babuni.dev
 
@@ -35,3 +35,7 @@ Stealth is inferred from the watched button rather than a buff/icon, which avoid
 ## Unresolved
 
 README describes version 1.2.4 while the inspected TOC declared 1.1.0; confirm version before release.
+
+## November 2026 — naming direction
+
+The proposed title **StealthEmotes** describes my original stealth-themed button-emote experiment. The observed implementation watches an action slot, not a successful Stealth cast. The GitHub repository and installed addon remain **amazin** / **Amazin**; renaming them is separate work.
