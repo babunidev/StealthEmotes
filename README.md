@@ -1,47 +1,52 @@
-# StealthEmotes (formerly Amazin)
+# StealthEmotes
 
-**By:** Babuni
+**Originally Amazin · World of Warcraft 1.12**  
+**Creative direction:** Babuni
 
-Originally named **Amazin**, this was my stealth-themed action-button emote experiment. The more descriptive name **StealthEmotes** identifies its purpose without changing what the original code actually does. This is a proposed project title; the GitHub repository and installed addon are still named `amazin` / `Amazin`.
+StealthEmotes began as a little project for my younger brother. His Rogue had a Stealth button, and the thought of that button occasionally making the character giggle, laugh or do something equally ridiculous appealed to me. A chance-based emote could introduce a tiny, unpredictable moment of roleplay without anyone having to type it.
 
-The addon watches one configured action-bar slot. Pressing that slot may play a random built-in emote after a cooldown, then delegates to the original action. It does not detect successful Stealth casts or actual stealth state. A separate command reports rested XP.
+Back then, the addon was called **Amazin**, a name connected to my brother. The project now lives under the more descriptive name **StealthEmotes**, but keeping Amazin as its original identity is a small acknowledgment of him. Making something for one particular character, at one particular moment, was enjoyable in its own right and encouraged me to keep experimenting with little tools.
 
-## Installation and use
+The original addon did not detect the Stealth aura or confirm a successful Stealth cast. Instead, it watched a configured action-bar slot and sometimes played a random built-in emote when that slot was pressed. That distinction remains important when describing what the code does.
 
-The commands and files below retain their historical names; this documentation revision does not rename the installed addon.
+## Features
 
-Install `Amazin.lua` and `Amazin.toc` under `Interface/AddOns/Amazin/`, restart the client and enable it. Run `/amazin watch`, press the intended button, note its slot, set `/amazin slot <n>`, then toggle watch off.
+- Twelve built-in emotes: ROFL, LAUGH, GIGGLE, STARE, GRIN, SMIRK, CHUCKLE, WINK, SHUSH, SNICKER, ROAR and LICK.
+- Configurable emote chance from 0–100% (default: 100%).
+- Configurable cooldown from 0–60 seconds (default: 6 seconds).
+- A watch mode for identifying action-bar slot numbers.
+- A separate command to report rested experience.
 
-| Command | Source behavior |
+The cooldown is consumed before the probability roll, including when no emote is played. The original action is still called after the wrapper checks its slot.
+
+## Installation and commands
+
+**Important:** The GitHub repository is now [StealthEmotes](https://github.com/babunidev/StealthEmotes), but the installable addon still uses its historical name **Amazin**. The Lua file, TOC, saved variables and slash command have **not** been renamed.
+
+Place `Amazin.lua` and `Amazin.toc` in `Interface/AddOns/Amazin/`, restart the client and enable the addon. Use `/amazin watch` and press the intended action button to identify its slot, then set `/amazin slot <n>` and turn watch mode off.
+
+| Command | Source-defined behavior |
 | --- | --- |
-| `/amazin slot <n>` | Saves watched numeric slot |
-| `/amazin watch` | Toggles local slot reports |
-| `/amazin chance <0-100>` | Sets probability; default 100% |
-| `/amazin scd <0-60>` | Sets cooldown seconds; default 6 |
-| `/amazin rexp` | Reports rested XP and rounded bubbles, capped at 30 |
-| `/amazin info` | Shows slot, chance, cooldown and pool size |
-| `/amazin reset` | Clears only the watched slot |
-| `/amazin save` | Copies current settings to the DB |
+| `/amazin slot <n>` | Saves the selected action slot |
+| `/amazin watch` | Toggles slot-number reports |
+| `/amazin chance <0-100>` | Sets the emote probability |
+| `/amazin scd <0-60>` | Sets cooldown in seconds |
+| `/amazin rexp` | Reports rested XP and rounded bubbles (capped at 30) |
+| `/amazin info` | Shows current slot, chance, cooldown and emote count |
+| `/amazin reset` | Clears the selected slot only |
+| `/amazin save` | Copies the current settings to the saved-variable table |
 
-**Version discrepancy:** Lua labels itself v1.2.4; the actual TOC declares v1.1.0. TOC notes list obsolete commands including `emote`, `stealth`, `debug` and omit `rexp`. This documentation records the discrepancy without modifying metadata. The [historical README](docs/HISTORICAL_README.md) includes a suggested v1.2.4 TOC block, not the committed manifest.
+## Compatibility and status
 
-## Limitations and verification
+This is an original Vanilla WoW 1.12 addon, not a newly verified release. The Lua header says **1.2.4** while the committed TOC declares **1.1.0**; the TOC also advertises outdated commands. Neither mismatch has been repaired by the documentation work.
 
-- Resolve Lua v1.2.4 versus TOC v1.1.0 and stale TOC command descriptions before a release; do not silently choose a version.
-- Verify 1.12 event callback conventions, login/logout persistence and logout before lazy hydration.
-- Check watched-slot presses with failed casts, bar paging and another UseAction wrapper.
-- Exercise 0%/100% chance, cooldown boundaries, startup uptime, reset and rested-XP edge cases.
-- Validate all 12 built-in tokens and fallback behavior on intended locales; prior README compatibility claims are not test results.
+Client-side verification is still outstanding for event callbacks, saved-variable loading, action-bar paging, interaction with other `UseAction` wrappers, cooldown edges and emote localization. No in-game or automated runtime tests were performed as part of the 2026 documentation updates.
 
-## Evidence and status
+## Project documentation
 
-Reviewed on 2026-10-26 against `main` at [e96070a](https://github.com/babunidev/amazin/commit/e96070a7cf16ed4605caafaf018a566f74d63207). Current Lua, TOC, README and dated commit history were inspected. Source describes implementation; it does not establish successful operation. Historical intent is reconstructed only where labeled. No in-client test or automated test was executed during this documentation pass.
+- [Creative concept](CONCEPT.md) · [Experience design](docs/DESIGN.md) · [Emote content](docs/CONTENT.md)
+- [Architecture](docs/ARCHITECTURE.md) · [Decisions](docs/DECISIONS.md) · [Roadmap](ROADMAP.md)
+- [Development journal](docs/DEVLOG.md) · [Changelog](CHANGELOG.md)
+- [AI collaboration](docs/AI_COLLABORATION.md) · [Development instructions](AGENTS.md)
 
-## Documentation
-
-- [Concept](CONCEPT.md) · [Design](docs/DESIGN.md) · [Content](docs/CONTENT.md)
-- [Architecture](docs/ARCHITECTURE.md) · [Decisions](docs/DECISIONS.md)
-- [Roadmap](ROADMAP.md) · [Changelog](CHANGELOG.md) · [Development journal](docs/DEVLOG.md)
-- [AI collaboration](docs/AI_COLLABORATION.md) · [Contributor instructions](AGENTS.md)
-
-The [historical README](docs/HISTORICAL_README.md) is retained verbatim as prior documentation, including any outdated claims. Current source and the qualifications above take precedence.
+The [historical README](docs/HISTORICAL_README.md) is preserved as an earlier record. Older documentation and commits remain in Git history; current source takes precedence over outdated claims about behavior or compatibility.

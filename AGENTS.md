@@ -1,27 +1,33 @@
-# Development rules — StealthEmotes
+# Development instructions — StealthEmotes
 
-**By:** Babuni
+**Human creative and project author:** Babuni  
+**Portfolio:** babuni.dev
 
-Preserve project-specific player experience and source comments. Human direction belongs to Babuni.dev; credit AI separately. Existing code is evidence of an approach, not proof of historic approval or runtime verification. Record proposed, implemented and tested separately. With material edits update README, CONCEPT, ROADMAP, CHANGELOG and docs/DEVLOG. Preserve third-party credits.
+## Authorship and voice
 
-## Evidence and maintenance rules
+The original idea was a small, chance-based roleplay addon for Babuni's younger brother's Rogue. It was called **Amazin** in connection with him; **StealthEmotes** is the current repository/project name. Preserve that personal origin without inventing the brother's actual name, a usage history or motivations for every technical change.
 
-- Read the actual branch, Lua, TOC, README and relevant dated diffs before editing. Keep source behavior, proposals and tested results separate.
-- Preserve Babuni.dev as project author; identify AI drafting, analysis or code assistance separately. Preserve historical records, aliases, license terms and third-party credit.
-- Never treat a comment, version label or manifest interface as proof of runtime compatibility. Never claim tests were run without recording the command, environment and outcome.
-- For material changes update README, CONCEPT, ROADMAP, CHANGELOG and docs/DEVLOG, plus architecture/design/content where affected. Link evidence and retain uncertainty.
-- Documentation-only work must not change Lua, TOC, tests or assets. Check the diff and all relative documentation links before publishing.
+Write public-facing histories from Babuni's first-person perspective. Never begin a sentence with **I** or **My**. Use **creative** as the role label for the human who conceived the work. Keep the narrative concise and relatable; do not present the creative in the third person within their own story. Technical reference documents may be neutral.
 
-## Repository-specific constraints
+Credit AI for the research, drafting, coding or other work it actually performed. Do not ascribe Babuni's ideas to AI, or imply Babuni manually wrote code produced by AI. Distinguish proposed, implemented and tested actions.
 
-- Resolve Lua v1.2.4 versus TOC v1.1.0 and stale TOC command descriptions before a release; do not silently choose a version.
-- Verify 1.12 event callback conventions, login/logout persistence and logout before lazy hydration.
-- Check watched-slot presses with failed casts, bar paging and another UseAction wrapper.
-- Exercise 0%/100% chance, cooldown boundaries, startup uptime, reset and rested-XP edge cases.
-- Validate all 12 built-in tokens and fallback behavior on intended locales; prior README compatibility claims are not test results.
+## Identity and compatibility
 
-## Documentation voice and proposed name
+- Repository: `babunidev/StealthEmotes`.
+- Original installed addon: `Amazin`, with `Amazin.lua`, `Amazin.toc`, `/amazin` and `AmazinDB`.
+- The project rename does **not** authorize renaming runtime identifiers. Any migration requires an explicit decision and compatibility plan.
+- The code watches a selected action slot; never describe this as detecting successful Stealth or the Stealth aura.
+- Lua version 1.2.4 and TOC version 1.1.0 conflict. Command notes in the TOC are outdated. Do not silently resolve either.
 
-Use **Babuni** for the human identity; **babuni.dev** refers to the portfolio and development platform. Tell the creative history in Babuni's first-person voice, without starting sentences with `I` or `My`. Distinguish AI-generated code, analysis and writing from Babuni's original ideas and hands-on actions. Do not fabricate original conversations or assume that source comments prove motivation. Technical descriptions may remain neutral.
+## Maintenance rules
 
-**StealthEmotes** is the proposed project name, while `amazin` is the current GitHub repository and `Amazin` remains the installed addon identity. Do not silently rename files, folders, commands or saved variables.
+- Inspect the current source and relevant commit evidence before describing functionality or proposing changes.
+- Keep personal recollection, source-backed observations, historical inference and verified test results distinct.
+- Preserve earlier commits and the verbatim `docs/HISTORICAL_README.md`; do not rewrite history to imply unrecorded certainty.
+- With substantial changes, update README, CONCEPT, ROADMAP, CHANGELOG and docs/DEVLOG; update architectural, design and attribution notes where relevant.
+- Keep documentation-only changes separate from game code. Test and report any code changes against the intended client when possible.
+- Check paths, links, compatibility claims and the final diff before committing.
+
+## Verification priorities
+
+Verify WoW 1.12 event callbacks, login/logout settings persistence, slot paging and failed-cast behavior, coexistence with other `UseAction` hooks, initial cooldown timing, chance extremes, all emote tokens, locales and rested-XP boundaries. Do not call these checks completed until results exist.

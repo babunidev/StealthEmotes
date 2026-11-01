@@ -1,25 +1,29 @@
-# amazin — architecture
+# StealthEmotes — architecture
 
-**Project author and creative direction:** Babuni.dev
+The original addon ships as `Amazin.lua` and `Amazin.toc` for WoW 1.12. This document describes the current source, not a verified runtime test.
 
-The file captures `UseAction` in `_Orig_UseAction` and replaces it with a wrapper. Every invocation lazily calls `ensureLoaded()`, optionally prints a watched slot, and calls `doStealthEmoteNow()` when the slot matches. The original action is invoked afterward with its original arguments.
+## Action interception
 
-`doStealthEmoteNow()` compares `GetTime()` with `LAST_STEALTH_EMOTE_TIME`, then records the time **before** the chance roll. Thus an unsuccessful roll still consumes the cooldown. Selection uses `table.getn` and `math.random`; `DoEmote` has a German text fallback. `LAST_STEALTH_EMOTE_TIME` starts at zero, so initial eligibility depends on client uptime.
+The Lua file captures `UseAction` in `_Orig_UseAction` and replaces the global function with a wrapper. Each invocation calls `ensureLoaded()`, optionally prints the pressed slot in watch mode, checks whether it matches `WATCH_SLOT`, and finally invokes the original action with its original arguments.
 
-`AmazinDB` is declared account-wide in the TOC, holding `slot`, `stealth_chance`, `stealth_cd`. Watch mode and last-emote time are transient. `PLAYER_LOGIN` seeds randomness and `PLAYER_LOGOUT` copies current settings. Lazy hydration occurs on action use or a slash command; logout before hydration should be checked for overwriting saved settings with defaults. There is no per-frame loop or automated test file.
+A matching press is **not** proof that Stealth succeeded. Action-bar paging, failed casts, or other addons wrapping `UseAction` can affect the observable behavior.
 
-## Evidence and status
+## Emote selection and cooldown
 
-Reviewed on 2026-10-26 against `main` at [e96070a](https://github.com/babunidev/amazin/commit/e96070a7cf16ed4605caafaf018a566f74d63207). Current Lua, TOC, README and dated commit history were inspected. Source describes implementation; it does not establish successful operation. Historical intent is reconstructed only where labeled. No in-client test or automated test was executed during this documentation pass.
+`doStealthEmoteNow()` compares `GetTime()` with `LAST_STEALTH_EMOTE_TIME`. Once the cooldown permits an attempt, the timestamp is updated **before** the random chance roll; a failed roll therefore consumes cooldown. A successful roll selects one of twelve built-in tokens with `math.random` and calls `DoEmote`. If `DoEmote` is unavailable, the implementation sends the fixed German fallback text `kichert leise...` as an EMOTE.
 
-## Preserved earlier documentation
+`LAST_STEALTH_EMOTE_TIME` starts at zero, so first-use eligibility can depend on uptime. The default cooldown is six seconds, default chance 100%.
 
-The following earlier record is retained verbatim. Statements about unavailable history or pending verification describe that earlier snapshot; the dated evidence above supplements it.
+## Settings and events
 
-# amazin — architecture
+`AmazinDB` is an account-wide saved-variable table containing `slot`, `stealth_chance` and `stealth_cd`. Settings hydrate lazily when a slash command or action invocation calls `ensureLoaded()`. Watch mode and last-emote timestamp are not persisted.
 
-**Author:** Babuni.dev
+The file registers `PLAYER_LOGIN` to seed the random generator and `PLAYER_LOGOUT` to copy settings to the saved-variable table. Callback conventions for the target WoW 1.12 runtime and logout before lazy hydration require verification.
 
-Amazin.lua hooks action-slot use, chooses built-in emotes, stores AmazinDB; README documents /amazin watch, slot, chance, scd, rexp.
+## Additional command
 
-Evidence: README.md, main addon Lua file and .toc manifest. Code inspection describes implementation intent, not verified behavior on a running client.
+`/amazin rexp` reads rested XP and the player's maximum XP, calculates rounded rested-XP bubbles via `floor(restedXP * 20 / maxXP + 0.5)`, then caps the result at 30. Missing data has a local chat message rather than a crash path.
+
+## Known discrepancies
+
+Lua identifies version **1.2.4** while the TOC says **1.1.0** and contains obsolete command descriptions. The repository rename to **StealthEmotes** does not change the addon package or these identifiers. No automated test suite or new in-game verification is recorded for this documentation revision.

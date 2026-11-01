@@ -1,29 +1,21 @@
 # StealthEmotes — concept
 
-**By:** Babuni
+**Creative direction:** Babuni
 
-The original theme was a stealth-flavored character reaction tied to an action-bar button. The current addon watches one configured action-bar slot. Pressing that slot may play a random built-in emote after a cooldown, then delegates to the original action. It does not detect successful Stealth casts or actual stealth state. A separate command reports rested XP.
+## Why this exists
 
-The small interaction gives a stealth-themed action a comic character reaction. This description comes from the current code and historical README. My complete original development conversation has not been recovered, so the reasons behind every iteration remain uncertain. Slot watching avoids dependence on aura/icon detection, but pressing the slot is not proof that Stealth succeeded. Moving or paging action bars can change what the selected slot means.
+A small gift for my little brother was the starting point. The idea was to give his Rogue a few unexpected roleplaying reactions: press the Stealth button, and occasionally the character might giggle, laugh or make another funny emote. The randomness mattered. A reaction on every press would become mechanical; a surprise now and then could feel like the character had a mischievous streak.
 
-Chance and cooldown offer two independent controls over frequency. Watch mode helps discover slot numbers, but prints every action while enabled. The addon wraps a global function, so other action-bar addons and load order need a combined test. Historical claims that it works on every locale remain unverified in this pass.
+The original name, **Amazin**, honored that personal connection. Later, when revisiting the project for my portfolio, **StealthEmotes** became the clearer name for what it was designed around. Amazin remains part of the history rather than disappearing with the repository rename.
 
-## Evidence and status
+## How the concept became an addon
 
-Reviewed on 2026-10-26 against `main` at [e96070a](https://github.com/babunidev/amazin/commit/e96070a7cf16ed4605caafaf018a566f74d63207). Current Lua, TOC, README and dated commit history were inspected. Source describes implementation; it does not establish successful operation. Historical intent is reconstructed only where labeled. No in-client test or automated test was executed during this documentation pass.
+The code monitors one selected action-bar slot, not a stealth-state change. It wraps WoW's `UseAction` function, checks whether the pressed slot matches the configured one, applies a cooldown and random chance, then passes control to the original action. The emotes are built-in game commands, not custom animations. A separate `/amazin rexp` command reports rested experience.
 
-## Preserved earlier documentation
+A 2025 commit shows a shift away from earlier aura-related logic toward slot monitoring. The exact reasons for each internal implementation decision are not recoverable from the commit alone. The personal purpose described above comes from my own account of why the addon was made, not from a speculative reading of code.
 
-The following earlier record is retained verbatim. Statements about unavailable history or pending verification describe that earlier snapshot; the dated evidence above supplements it.
+## Scope
 
-# StealthEmotes — concept
+This was made for one character and one playful experience, not conceived as a general roleplaying framework. Later features and code revisions can be documented on their own terms without turning that original moment into a larger plan that did not exist.
 
-**By:** Babuni
-
-A Vanilla 1.12 stealth-themed emote addon with cooldown, random chance, watched action slot and rested-experience reporting.
-
-## Design visible in the repository
-
-Stealth is inferred from the watched button rather than a buff/icon, which avoids fragile client aura checks.
-
-This concept is reconstructed from README.md, the main addon Lua file and the .toc manifest; the idea and creative direction belong to me, Babuni. No unrecorded decisions are invented.
+**Status:** The design and existing source have been reviewed retrospectively; no renewed in-game verification has been performed.

@@ -1,17 +1,19 @@
-# StealthEmotes / Amazin — AI collaboration and attribution
+# StealthEmotes — AI collaboration and attribution
 
-**By:** Babuni
+## Creative origin
 
-Babuni.dev is the human project author and holds creative direction. AI assistance on 2026-10-26 consisted of repository inspection, historical diff reading, analysis and documentation drafting. It did not originate the project, implement new runtime features or execute game tests in this pass. Earlier AI involvement cannot be inferred from existing code or generic commit messages.
+A little roleplaying idea for my younger brother's Rogue was the reason **Amazin** existed. The character would occasionally respond to the Stealth button with a random funny emote. That original purpose and the decision to acknowledge my brother through the historical name came from me, not from an AI reconstruction.
 
-## Record future collaboration
+The available repository history does not reliably establish who performed each coding step in 2025 or the full contents of those development conversations. Code presence alone must not be used to assign those actions to either the human creative or AI.
 
-For each material change record: date; Babuni.dev's direction; AI proposal or contribution; acceptance/rejection if explicitly recorded; commit and affected paths; tests actually performed with environment/results; unresolved questions. Do not manufacture private design conversations or imply approval from code presence.
+## Retrospective assistance in 2026
 
-## Verification boundary
+During the October 2026 documentation pass, AI assistance inspected source files and selected commits, identified technical discrepancies and drafted project documentation. No live client tests took place.
 
-Documentation checks cover file presence, links, source consistency and documentation-only diffs. They do not certify installation, gameplay, server mechanics or compatibility. No automated test suite was found in the reviewed tree.
+When returning to the project in November 2026, the descriptive name **StealthEmotes** was adopted for the repository, and my personal recollection supplied the missing motivation. AI assistance revised documentation, checked the current repository and kept the original **Amazin** runtime identifiers intact. The historical purpose was supplied by the human creative; the document edits were carried out by AI.
 
-## November 2026 — documentation perspective
+## How work is attributed
 
-When revisiting the project, I chose **StealthEmotes** as the proposed title and asked my AI assistant to bring the documentation toward my first-person viewpoint. AI inspected the existing documentation and source-supported behavior and edited the written record; it did not originate the earlier idea or run the game during this revision. The precise original coding conversation has not been recovered, so unverified personal motivations and past AI contributions must not be invented.
+Record meaningful future work using the creative direction, AI contributions, human decisions, changed files or commits, and tests actually performed. Do not invent agreements, private conversations, approvals or tests to make a seamless narrative.
+
+The documentation revision is not evidence that the addon was tested on a running WoW 1.12 client.

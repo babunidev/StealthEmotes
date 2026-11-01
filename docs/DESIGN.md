@@ -1,15 +1,9 @@
-# amazin — experience design
+# StealthEmotes — experience design
 
-**Project author and creative direction:** Babuni.dev
+A little surprise for my brother's Rogue was the intended experience. Instead of typing an emote manually, a familiar Stealth-button press could occasionally make the character giggle, laugh, grin or do something more absurd. That interruption of an ordinary action was the joke: unpredictable, brief and personal to the character.
 
-The small interaction gives a stealth-themed action a comic character reaction. This reading follows current source and prior README, not a recovered design discussion. Slot watching avoids dependence on aura/icon detection, but pressing the slot is not proof that Stealth succeeded. Moving or paging action bars can change what the selected slot means.
+The chance and cooldown settings control how frequently those moments can happen. The code's default chance is 100%, but the settings allow a much rarer reaction. An unsuccessful probability roll still consumes the cooldown, which is an observed behavior rather than a confirmed original creative requirement.
 
-Chance and cooldown offer two independent controls over frequency. Watch mode helps discover slot numbers, but prints every action while enabled. The addon wraps a global function, so other action-bar addons and load order need a combined test. Historical claims that it works on every locale remain unverified in this pass.
+The addon monitors a configured action-bar slot, not the Stealth aura or the result of casting Stealth. As a result, the intended roleplaying moment and the exact technical trigger are not identical. Watch mode helps locate the slot but prints other action presses while active. Moving the ability to a different bar or changing page may require reconfiguration.
 
-## Verification priorities
-
-- Resolve Lua v1.2.4 versus TOC v1.1.0 and stale TOC command descriptions before a release; do not silently choose a version.
-- Verify 1.12 event callback conventions, login/logout persistence and logout before lazy hydration.
-- Check watched-slot presses with failed casts, bar paging and another UseAction wrapper.
-- Exercise 0%/100% chance, cooldown boundaries, startup uptime, reset and rested-XP edge cases.
-- Validate all 12 built-in tokens and fallback behavior on intended locales; prior README compatibility claims are not test results.
+Twelve built-in WoW emotes supply the reactions. Their client-specific output, including localized behavior, has not been retested during the documentation review. No graphical interface or new feature set has been approved through this retrospective.

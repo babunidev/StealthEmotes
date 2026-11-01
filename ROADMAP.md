@@ -1,37 +1,24 @@
-# amazin — roadmap
+# StealthEmotes — roadmap
 
-**Project author and creative direction:** Babuni.dev
+**Creative direction:** Babuni
 
-## Current implementation
+The original goal was a small, chance-based Rogue emote addon for my little brother, not an ongoing product roadmap. The repository has since been renamed **StealthEmotes**; the installed addon remains **Amazin**.
 
-A stealth-themed emote addon that watches one configured action-bar slot. Pressing that slot may play a random built-in emote after a cooldown, then delegates to the original action. It does not detect successful Stealth casts or actual stealth state. A separate command reports rested XP.
+## Existing source
 
-## Proposed verification work
+- One configurable watched action-bar slot.
+- Twelve built-in emotes with chance and cooldown settings.
+- Watch mode and rested-XP reporting.
+- Account-wide saved-variable table `AmazinDB`.
 
-- [ ] Resolve Lua v1.2.4 versus TOC v1.1.0 and stale TOC command descriptions before a release; do not silently choose a version.
-- [ ] Verify 1.12 event callback conventions, login/logout persistence and logout before lazy hydration.
-- [ ] Check watched-slot presses with failed casts, bar paging and another UseAction wrapper.
-- [ ] Exercise 0%/100% chance, cooldown boundaries, startup uptime, reset and rested-XP edge cases.
-- [ ] Validate all 12 built-in tokens and fallback behavior on intended locales; prior README compatibility claims are not test results.
+These features are present in source, not newly certified by a game-client test.
 
-No new gameplay feature or release is approved by this documentation pass. Resolve compatibility findings in a separately scoped implementation change and update this record with actual test results.
+## Unverified technical work
 
-## Preserved earlier documentation
+- [ ] Reconcile the Lua 1.2.4 and TOC 1.1.0 version labels and outdated manifest command descriptions.
+- [ ] Verify WoW 1.12 event callbacks and persistence, including logout before settings load.
+- [ ] Test failed casts, action-bar paging and coexistence with another `UseAction` wrapper.
+- [ ] Test chance limits, cooldown limits and initial cooldown behavior.
+- [ ] Verify all built-in emote tokens, localization and rested-XP edge cases.
 
-The following earlier record is retained verbatim. Statements about unavailable history or pending verification describe that earlier snapshot; the dated evidence above supplements it.
-
-# amazin — roadmap
-
-**Author:** Babuni.dev
-
-## Present
-
-Source and addon metadata exist. No live-game test was conducted during this documentation pass.
-
-## Verification work, not approved new features
-
-README describes version 1.2.4 while the inspected TOC declared 1.1.0; confirm version before release.
-
-## Future development
-
-No additional feature is approved by this reconstruction. Record new direction before implementation.
+These are verification tasks, **not approved feature additions**. No new gameplay functionality or release has been planned as part of the documentation rewrite.

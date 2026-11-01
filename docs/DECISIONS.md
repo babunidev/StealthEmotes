@@ -1,41 +1,24 @@
-# StealthEmotes / Amazin — decisions and evidence
+# StealthEmotes — decisions and evidence
 
-**Project author and creative direction:** Babuni.dev
+## Creative choices
 
-| Implemented choice | Evidence | Interpretation boundary |
+The addon began as a gift for my little brother's Rogue. A random giggle or similarly funny emote on pressing the Stealth button would create a small, spontaneous roleplaying moment. **Amazin**, the original project name, is connected to him and remains an acknowledgment of that inspiration.
+
+On revisiting the project for my portfolio in November 2026, **StealthEmotes** became the repository and project name because it describes the idea more directly. Keeping the historical addon identifiers untouched separates this documentation and repository rename from a future code migration.
+
+## Implementation observed in the source
+
+| Source-observed approach | Evidence | Limit of interpretation |
 | --- | --- | --- |
-| Observe a slot press | `UseAction` wrapper | Not successful Stealth detection |
-| Consume cooldown before roll | `doStealthEmoteNow` assignment order | No recorded rationale for this order |
-| Store account-wide settings | `AmazinDB` and TOC | Different characters may need different slots |
-| Parse with `string.find` | `split_cmd` | Lua 5.0 intent is not a live-client test |
-| Keep version mismatch visible | Lua header and TOC | Documentation does not reconcile release identity |
+| Watch an action-bar slot | `UseAction` wrapper | Does not confirm Stealth success or state |
+| Roll a random built-in emote | Emote pool and `math.random` | Does not prove any particular observed gameplay |
+| Record cooldown before the chance roll | `doStealthEmoteNow()` | No recovered rationale for this specific order |
+| Persist settings account-wide | `AmazinDB` in Lua/TOC | Character-specific behavior was not implemented as separate profiles |
+| Use a Lua 5.0-friendly parser | `split_cmd` | Does not establish client compatibility |
+| Report rested experience | `reportRestedXP()` | Separate from the original Stealth-emote idea |
 
-## Open verification
+The August 2025 diff records an earlier move away from aura-based handling. That code history documents *what changed*, not the complete reasoning behind it.
 
-- Resolve Lua v1.2.4 versus TOC v1.1.0 and stale TOC command descriptions before a release; do not silently choose a version.
-- Verify 1.12 event callback conventions, login/logout persistence and logout before lazy hydration.
-- Check watched-slot presses with failed casts, bar paging and another UseAction wrapper.
-- Exercise 0%/100% chance, cooldown boundaries, startup uptime, reset and rested-XP edge cases.
-- Validate all 12 built-in tokens and fallback behavior on intended locales; prior README compatibility claims are not test results.
+## Outstanding technical questions
 
-These are source-observed choices and proposed checks, not invented historical approvals or an approved feature backlog.
-
-## Preserved earlier documentation
-
-The following earlier record is retained verbatim. Statements about unavailable history or pending verification describe that earlier snapshot; the dated evidence above supplements it.
-
-# amazin — decisions and evidence
-
-**Author:** Babuni.dev
-
-## Current implementation choices (not confirmed historical approvals)
-
-Stealth is inferred from the watched button rather than a buff/icon, which avoids fragile client aura checks.
-
-## Unresolved
-
-README describes version 1.2.4 while the inspected TOC declared 1.1.0; confirm version before release.
-
-## November 2026 — naming direction
-
-The proposed title **StealthEmotes** describes my original stealth-themed button-emote experiment. The observed implementation watches an action slot, not a successful Stealth cast. The GitHub repository and installed addon remain **amazin** / **Amazin**; renaming them is separate work.
+Version labels disagree (Lua 1.2.4; TOC 1.1.0), and TOC command notes are stale. Event handling, logout persistence, slot selection, compatibility with other wrappers, cooldown boundaries, token support and localization still need client testing. These are unverified items, not retrospective claims about past failures or approved feature requests.
