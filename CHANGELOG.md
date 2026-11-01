@@ -1,4 +1,4 @@
-# amazin — change history
+# StealthEmotes / Amazin — change history
 
 **Project author and creative direction:** Babuni.dev
 
@@ -29,3 +29,9 @@ The following earlier record is retained verbatim. Statements about unavailable 
 - Added development journal, roadmap and agent rules. No game code changed or runtime test was conducted.
 
 Earlier version history cannot be reliably reconstructed from this snapshot alone.
+
+## 2026-11-01 — documentation naming review
+
+- Adopted **StealthEmotes** as a proposed descriptive project title, without changing the GitHub repository or installed addon name.
+- Updated the current README, concept, AI instructions, development journal, collaboration notes, and decisions to clarify the historical versus proposed identity.
+- No Lua, TOC, in-game behavior or tests were changed.
