@@ -31,3 +31,7 @@ Credit AI for the research, drafting, coding or other work it actually performed
 ## Verification priorities
 
 Verify WoW 1.12 event callbacks, login/logout settings persistence, slot paging and failed-cast behavior, coexistence with other `UseAction` hooks, initial cooldown timing, chance extremes, all emote tokens, locales and rested-XP boundaries. Do not call these checks completed until results exist.
+
+## Historical boundaries
+
+Read [the family-history reference](docs/EMOTE_FAMILY_HISTORY.md) before describing this addon as a successor or claiming that its emote pool can be extended in-game. Amazin uses twelve fixed native emotes and watches a configured slot, not a Stealth aura. Keep my brother's role in the origin story and preserve human creative authorship.

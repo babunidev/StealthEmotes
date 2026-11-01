@@ -22,3 +22,7 @@ The August 2025 diff records an earlier move away from aura-based handling. That
 ## Outstanding technical questions
 
 Version labels disagree (Lua 1.2.4; TOC 1.1.0), and TOC command notes are stale. Event handling, logout persistence, slot selection, compatibility with other wrappers, cooldown boundaries, token support and localization still need client testing. These are unverified items, not retrospective claims about past failures or approved feature requests.
+
+## Related development history
+
+Stealth Emotes (originally Amazin) is a playful Rogue-oriented parallel experiment created for my younger brother. The current addon has 12 fixed built-in emote tokens, configurable chance/cooldown and a watched action slot; it does not confirm Stealth, and it cannot add emote tokens through a player command. See the [comparative history of the expressive addons](EMOTE_FAMILY_HISTORY.md) for the broader source-backed chronology.

@@ -17,3 +17,7 @@ Returning to the source meant separating what the addon was meant to feel like f
 The portfolio needed a more descriptive project name, so **StealthEmotes** became the GitHub repository name. Still, the old name has a place in this story: **Amazin** belongs to that small experiment made for my brother, and keeping it as an honorable mention feels right. Whether he went on to use the other tools hardly matters to why this one was enjoyable to make.
 
 With that personal history supplied by me, AI assistance revised the project documentation from my perspective and verified the current repository identity. The original `Amazin` addon files and commands remain unchanged. No new game code or in-game tests came from this documentation update.
+
+## 1 November 2026 — placing Amazin among the other experiments
+
+Looking back at these early addons, I wanted this personal project for my brother to remain visible beside the Buxbrew and ROAR experiments rather than disappear into a generic feature list. My AI assistant checked the current source and compared trigger mechanics: Amazin keeps its fixed twelve-emote pool and watched-button behavior, while later Roar Guild versions allow registering more native tokens. The [family history](EMOTE_FAMILY_HISTORY.md) records those distinctions and the move toward Flourish Forever. Documentation only; no new client testing.

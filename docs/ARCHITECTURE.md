@@ -27,3 +27,7 @@ The file registers `PLAYER_LOGIN` to seed the random generator and `PLAYER_LOGOU
 ## Known discrepancies
 
 Lua identifies version **1.2.4** while the TOC says **1.1.0** and contains obsolete command descriptions. The repository rename to **StealthEmotes** does not change the addon package or these identifiers. No automated test suite or new in-game verification is recorded for this documentation revision.
+
+## Related development history
+
+Stealth Emotes (originally Amazin) is a playful Rogue-oriented parallel experiment created for my younger brother. The current addon has 12 fixed built-in emote tokens, configurable chance/cooldown and a watched action slot; it does not confirm Stealth, and it cannot add emote tokens through a player command. See the [comparative history of the expressive addons](EMOTE_FAMILY_HISTORY.md) for the broader source-backed chronology.

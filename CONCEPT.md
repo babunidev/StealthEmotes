@@ -19,3 +19,7 @@ A 2025 commit shows a shift away from earlier aura-related logic toward slot mon
 This was made for one character and one playful experience, not conceived as a general roleplaying framework. Later features and code revisions can be documented on their own terms without turning that original moment into a larger plan that did not exist.
 
 **Status:** The design and existing source have been reviewed retrospectively; no renewed in-game verification has been performed.
+
+## Related development history
+
+Stealth Emotes (originally Amazin) is a playful Rogue-oriented parallel experiment created for my younger brother. The current addon has 12 fixed built-in emote tokens, configurable chance/cooldown and a watched action slot; it does not confirm Stealth, and it cannot add emote tokens through a player command. See the [comparative history of the expressive addons](docs/EMOTE_FAMILY_HISTORY.md) for the broader source-backed chronology.

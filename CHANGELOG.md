@@ -27,3 +27,7 @@ The source, usage, architecture, content, design, history and contributor guidan
 - **2025-09-11** — [79c3265](https://github.com/babunidev/StealthEmotes/commit/79c3265e3c193c08b9422e868a5e39d62e522ebf): inspected diff adds ROAR and LICK to the emote pool.
 
 Commit dates are evidence of code changes, not established public release dates. The original Lua/TOC version discrepancy remains unresolved. Earlier documentation revisions are preserved through Git history and the [historical README](docs/HISTORICAL_README.md).
+
+## 2026-11-01 — family-history documentation
+
+- Connected Amazin's brother-inspired origin to the wider [expressive-addon history](docs/EMOTE_FAMILY_HISTORY.md). Fixed emote pool and action-slot trigger confirmed from source; code and TOC unchanged.

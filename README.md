@@ -50,3 +50,7 @@ Client-side verification is still outstanding for event callbacks, saved-variabl
 - [AI collaboration](docs/AI_COLLABORATION.md) · [Development instructions](AGENTS.md)
 
 The [historical README](docs/HISTORICAL_README.md) is preserved as an earlier record. Older documentation and commits remain in Git history; current source takes precedence over outdated claims about behavior or compatibility.
+
+## Place in the action-emote family
+
+Stealth Emotes (originally Amazin) is a playful Rogue-oriented parallel experiment created for my younger brother. The current addon has 12 fixed built-in emote tokens, configurable chance/cooldown and a watched action slot; it does not confirm Stealth, and it cannot add emote tokens through a player command. See the [source-grounded family history](docs/EMOTE_FAMILY_HISTORY.md) for the progression toward Roar Guild's editable emote registry and Flourish Forever's spellcast triggers.
