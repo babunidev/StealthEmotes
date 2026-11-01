@@ -1,4 +1,4 @@
-# amazin — development journal
+# StealthEmotes / Amazin — development journal
 
 **Project author and creative direction:** Babuni.dev
 
@@ -42,3 +42,7 @@ This narrative is a reconstruction of the existing source, not a recovered origi
 ## Open verification
 
 README describes version 1.2.4 while the inspected TOC declared 1.1.0; confirm version before release.
+
+## November 2026 — a more descriptive identity
+
+The early addon **Amazin** grew around a stealth-themed action-slot interaction. After revisiting the older projects, I selected **StealthEmotes** as its descriptive project name. The source makes an important distinction: it watches a button press, not the Stealth aura or a confirmed successful cast. At my request, an AI assistant began updating the current documentation to reflect the naming direction and first-person writing conventions. The GitHub repository and runtime addon have not been renamed, and no new in-game test has been performed.
