@@ -2,7 +2,7 @@
 
 **By:** Babuni
 
-I originally made this addon under the name **Amazin**, with a stealth-themed action-button emote in mind. The more descriptive name **StealthEmotes** identifies its purpose without changing what the original code actually does. This is a proposed project title; the GitHub repository and installed addon are still named `amazin` / `Amazin`.
+Originally named **Amazin**, this was my stealth-themed action-button emote experiment. The more descriptive name **StealthEmotes** identifies its purpose without changing what the original code actually does. This is a proposed project title; the GitHub repository and installed addon are still named `amazin` / `Amazin`.
 
 The addon watches one configured action-bar slot. Pressing that slot may play a random built-in emote after a cooldown, then delegates to the original action. It does not detect successful Stealth casts or actual stealth state. A separate command reports rested XP.
 
