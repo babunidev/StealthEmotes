@@ -2,7 +2,7 @@
 
 **By:** Babuni
 
-I wanted a stealth-themed character reaction tied to an action-bar button. The current addon watches one configured action-bar slot. Pressing that slot may play a random built-in emote after a cooldown, then delegates to the original action. It does not detect successful Stealth casts or actual stealth state. A separate command reports rested XP.
+The original theme was a stealth-flavored character reaction tied to an action-bar button. The current addon watches one configured action-bar slot. Pressing that slot may play a random built-in emote after a cooldown, then delegates to the original action. It does not detect successful Stealth casts or actual stealth state. A separate command reports rested XP.
 
 The small interaction gives a stealth-themed action a comic character reaction. This description comes from the current code and historical README. My complete original development conversation has not been recovered, so the reasons behind every iteration remain uncertain. Slot watching avoids dependence on aura/icon detection, but pressing the slot is not proof that Stealth succeeded. Moving or paging action bars can change what the selected slot means.
 
