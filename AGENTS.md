@@ -35,3 +35,7 @@ Verify WoW 1.12 event callbacks, login/logout settings persistence, slot paging 
 ## Historical boundaries
 
 Read [the family-history reference](docs/EMOTE_FAMILY_HISTORY.md) before describing this addon as a successor or claiming that its emote pool can be extended in-game. Amazin uses twelve fixed native emotes and watches a configured slot, not a Stealth aura. Keep my brother's role in the origin story and preserve human creative authorship.
+
+## Repository-local documentation standard
+
+Before writing or changing project documentation, read [docs/DOCUMENTATION.md](docs/DOCUMENTATION.md). These rules travel with this repository and do not depend on the babuni.dev ChatGPT Project. Preserve all project-specific technical, creative, canon, safety, licensing, and historical rules in this file; follow the linked standard for public first-person narrative, human–AI attribution, concise development journals, decision records, and evidence-based verification. **Babuni** is the human creative; **babuni.dev** is the website/portfolio, not the person. Preserve third-party credits and historical legal notices. References above to a dated “documentation-only audit” describe that past task, not a permanent ban on later authorized implementation.
