@@ -3,11 +3,15 @@
 **Originally Amazin · World of Warcraft 1.12**  
 **Creative direction:** Babuni
 
-StealthEmotes began as a little project for my younger brother. His Rogue had a Stealth button, and the thought of that button occasionally making the character giggle, laugh or do something equally ridiculous appealed to me. A chance-based emote could introduce a tiny, unpredictable moment of roleplay without anyone having to type it.
+StealthEmotes is a WoW 1.12 addon that occasionally plays a random emote when you press a chosen action-bar button.
+
+## Why I made it
+
+The addon began as a little project for my younger brother. His Rogue had a Stealth button, and the thought of that button occasionally making the character giggle, laugh or do something equally ridiculous appealed to me. A chance-based emote could introduce a tiny, unpredictable moment of roleplay without anyone having to type it.
 
 Back then, the addon was called **Amazin**, a name connected to my brother. The project now lives under the more descriptive name **StealthEmotes**, but keeping Amazin as its original identity is a small acknowledgment of him. Making something for one particular character, at one particular moment, was enjoyable in its own right and encouraged me to keep experimenting with little tools.
 
-The original addon did not detect the Stealth aura or confirm a successful Stealth cast. Instead, it watched a configured action-bar slot and sometimes played a random built-in emote when that slot was pressed. That distinction remains important when describing what the code does.
+The trigger is the button press itself. The addon does not check the Stealth aura or confirm a successful cast.
 
 ## Features
 
