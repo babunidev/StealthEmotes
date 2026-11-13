@@ -1,5 +1,7 @@
 # StealthEmotes — AI collaboration and attribution
 
+Follow [the documentation standard](DOCUMENTATION.md) for first-person author voice throughout project documentation, factual changelogs, and naming the AI tool and verified model for each contribution.
+
 ## Creative origin
 
 A little roleplaying idea for my younger brother's Rogue was the reason **Amazin** existed. The character would occasionally respond to the Stealth button with a random funny emote. That original purpose and the decision to acknowledge my brother through the historical name came from me, not from an AI reconstruction.
